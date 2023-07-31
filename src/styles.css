@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --row-height: 48px;
+  --padding-inline: 16px;
+}
+
+body {
+  width: 100vw;
+  margin: 0;
+}

@@ -1,0 +1,62 @@
+.toolbar {
+  --edge-width: 200px;
+
+  width: 100%;
+  display: flex;
+  background-color: gray;
+  height: var(--row-height);
+
+  .date {
+    text-align: left;
+    min-width: var(--edge-width);
+    margin: auto;
+    padding-inline: var(--padding-inline);
+  }
+
+  .time {
+    text-align: center;
+    width: inherit;
+    margin: auto;
+    padding-inline: var(--padding-inline);
+  }
+
+  .settings {
+    text-align: right;
+    min-width: var(--edge-width);
+    margin: auto;
+    padding-inline: var(--padding-inline);
+  }
+}
+
+ul {
+  list-style-type: none;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+
+  .alt {
+    background-color: silver;
+  }
+}
+
+li {
+  height: var(--row-height);
+  display: flex;
+  padding-inline: var(--padding-inline);
+
+  .name {
+    margin: auto;
+    text-wrap: nowrap;
+  }
+
+  .buffer {
+    width: 100%;
+  }
+
+  .list-icon {
+    margin: auto;
+    width: 32px;
+    height: 32px;
+    padding-inline-end: 16px;
+  }
+}
