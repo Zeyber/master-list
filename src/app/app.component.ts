@@ -9,22 +9,9 @@ import settings from './settings.json';
 })
 export class AppComponent {
   title = 'master-list-angular-app';
-  items$ = this.feedService.getData('');
+  feeds = settings.feeds.map((feed) => ({
+    res$: this.feedService.getData(feed.endpoint),
+  }));
 
   constructor(protected feedService: FeedService) {}
-
-  ngOnInit() {
-    this.loadFeeds();
-    setInterval(() => {
-      this.loadFeeds();
-    }, 30000);
-  }
-
-  loadFeeds() {
-    const endpoints = settings.feeds.map((feed) => {
-      return this.feedService.getData(feed.endpoint);
-    });
-
-    console.log(endpoints);
-  }
 }

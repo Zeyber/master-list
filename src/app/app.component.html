@@ -7,12 +7,16 @@
 </div>
 
 <ul>
-  <li
-    *ngFor="let item of (items$ | async)?.data; let i = index"
-    [class.alt]="i % 2 === 1"
-  >
-    <img class="list-icon" [src]="item.icon" />
-    <div class="name">{{item.message}}: {{item.description}}</div>
-    <div class="buffer"></div>
-  </li>
+  <ng-container *ngFor="let feed of feeds">
+    <ng-container *ngIf="feed.res$ | async as res">
+      <li
+        *ngFor="let item of res.data; let i = index"
+        [class.alt]="i % 2 === 1"
+      >
+        <img class="list-icon" [src]="item.icon" />
+        <div class="name">{{item.message}}: {{item.description}}</div>
+        <div class="buffer"></div>
+      </li>
+    </ng-container>
+  </ng-container>
 </ul>

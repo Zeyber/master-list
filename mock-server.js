@@ -19,12 +19,20 @@ const MOCK_FEEDS = [
       { message: "Spamzee", description: "hi", icon: "/assets/icon.png" },
       { message: "Spamzee", description: "hi", icon: "/assets/icon.png" },
     ],
+  },
+  {
     endpoint: "/gmail",
     data: [
-      { message: "Mikey House", description: "hi", icon: "/assets/icon-2.png" },
-      { message: "Spamzee", description: "hi", icon: "/assets/icon.png" },
-      { message: "Spamzee", description: "hi", icon: "/assets/icon.png" },
-      { message: "Spamzee", description: "hi", icon: "/assets/icon.png" },
+      {
+        message: "Re: Help",
+        description: "Fire!!!!!",
+        icon: "/assets/icon-2.png",
+      },
+      {
+        message: "Re: Help",
+        description: "Its making a weird noise",
+        icon: "/assets/icon-2.png",
+      },
     ],
   },
 ];
