@@ -7,7 +7,10 @@
 </div>
 
 <ul>
-  <li *ngFor="let item of items; let i = index" [class.alt]="i % 2 === 1">
+  <li
+    *ngFor="let item of (items$ | async)?.data; let i = index"
+    [class.alt]="i % 2 === 1"
+  >
     <img class="list-icon" [src]="item.icon" />
     <div class="name">{{item.message}}: {{item.description}}</div>
     <div class="buffer"></div>

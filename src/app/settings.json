@@ -1,0 +1,10 @@
+{
+  "feeds": [
+    {
+      "endpoint": "http://localhost:9002/facebook"
+    },
+    {
+      "endpoint": "http://localhost:9002/gmail"
+    }
+  ]
+}

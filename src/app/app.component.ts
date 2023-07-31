@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-
-export interface ListItem {
-  message?: string;
-  description?: string;
-  icon?: string;
-}
+import { FeedService } from './feed.service';
+import settings from './settings.json';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +9,22 @@ export interface ListItem {
 })
 export class AppComponent {
   title = 'master-list-angular-app';
+  items$ = this.feedService.getData('');
 
-  items: ListItem[] = [
-    { message: 'Randall Smokes', description: 'hi', icon: '/assets/icon.png' },
-    { message: 'Mikey House', description: 'hi', icon: '/assets/icon.png' },
-    { message: 'Spamzee', description: 'hi', icon: '/assets/icon.png' },
-    { message: 'Spamzee', description: 'hi', icon: '/assets/icon.png' },
-    { message: 'Spamzee', description: 'hi', icon: '/assets/icon.png' },
-  ];
+  constructor(protected feedService: FeedService) {}
+
+  ngOnInit() {
+    this.loadFeeds();
+    setInterval(() => {
+      this.loadFeeds();
+    }, 30000);
+  }
+
+  loadFeeds() {
+    const endpoints = settings.feeds.map((feed) => {
+      return this.feedService.getData(feed.endpoint);
+    });
+
+    console.log(endpoints);
+  }
 }
