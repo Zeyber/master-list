@@ -47,9 +47,8 @@ li {
   .name {
     margin: auto;
     text-wrap: nowrap;
-  }
-
-  .buffer {
+    text-overflow: ellipsis;
+    overflow: hidden;
     width: 100%;
   }
 

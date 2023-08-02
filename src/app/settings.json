@@ -1,10 +1,7 @@
 {
   "feeds": [
     {
-      "endpoint": "http://localhost:9002/facebook"
-    },
-    {
-      "endpoint": "http://localhost:9002/gmail"
+      "endpoint": "http://localhost:3000/github"
     }
   ]
 }

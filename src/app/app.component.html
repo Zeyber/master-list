@@ -1,9 +1,11 @@
 <div class="toolbar">
-  <div class="date">Thursday, November 4th 2022</div>
-  <div class="time">7:03am</div>
-  <div class="settings">
-    <button [routerLink]="['settings']">⚙</button>
-  </div>
+  <ng-container *ngIf="date$ | async as date">
+    <div class="date">{{date | date: 'EEEE dd MMMM yyyy'}}</div>
+    <div class="time">{{ date | date: 'HH:mm aa'}}</div>
+    <div class="settings">
+      <button [routerLink]="['settings']">⚙</button>
+    </div>
+  </ng-container>
 </div>
 
 <ul>
@@ -14,8 +16,7 @@
         [class.alt]="i % 2 === 1"
       >
         <img class="list-icon" [src]="item.icon" />
-        <div class="name">{{item.message}}: {{item.description}}</div>
-        <div class="buffer"></div>
+        <div class="name">{{item.message}}</div>
       </li>
     </ng-container>
   </ng-container>
