@@ -1,0 +1,19 @@
+{
+  "feeds": [
+    {
+      "endpoint": "http://localhost:3001"
+    },
+    {
+      "endpoint": "http://localhost:3003"
+    },
+    {
+      "endpoint": "http://localhost:3002/gmail"
+    },
+    {
+      "endpoint": "http://localhost:3002/tasks"
+    },
+    {
+      "endpoint": "http://localhost:3000/github"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { BehaviorSubject, interval } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { FeedService } from './feed.service';
-import settings from './settings.json';
+import settings from '../../settings.json';
 
 const ONE_MINUTE = 60000;
 
