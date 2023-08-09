@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { BehaviorSubject, interval } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, startWith } from 'rxjs/operators';
 import { FeedService } from './feed.service';
 import settings from '../../settings.json';
 
@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit {
   title = 'master-list-angular-app';
   feeds = settings.feeds.map((feed) => ({
     res$: interval(ONE_MINUTE).pipe(
+      startWith(0),
       mergeMap(() => this.feedService.getData(feed.endpoint))
     ),
   }));
