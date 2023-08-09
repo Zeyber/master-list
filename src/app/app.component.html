@@ -3,7 +3,7 @@
     <div class="date">{{date | date: 'EEEE dd MMMM yyyy'}}</div>
     <div class="time">{{ date | date: 'HH:mm aa'}}</div>
     <div class="settings">
-      <button [routerLink]="['settings']">⚙</button>
+      <button [routerLink]="['settings']" [style.display]="'none'">⚙</button>
     </div>
   </ng-container>
 </div>
