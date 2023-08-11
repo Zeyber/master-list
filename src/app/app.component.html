@@ -1,8 +1,9 @@
 <div class="toolbar">
   <ng-container *ngIf="date$ | async as date">
     <div class="date">{{date | date: 'EEEE dd MMMM yyyy'}}</div>
-    <div class="time">{{ date | date: 'HH:mm aa'}}</div>
+    <div class="time"></div>
     <div class="settings">
+      {{ date | date: 'HH:mm aa'}}
       <button [routerLink]="['settings']" [style.display]="'none'">⚙</button>
     </div>
   </ng-container>
@@ -11,10 +12,7 @@
 <ul>
   <ng-container *ngFor="let feed of feeds">
     <ng-container *ngIf="feed.res$ | async as res">
-      <li
-        *ngFor="let item of res.data; let i = index"
-        [class.alt]="i % 2 === 1"
-      >
+      <li *ngFor="let item of res.data; let i = index">
         <img class="list-icon" [src]="item.icon" />
         <div class="name">{{item.message}}</div>
       </li>

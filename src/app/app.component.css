@@ -1,31 +1,28 @@
 .toolbar {
-  --edge-width: 240px;
-
   width: 100%;
   display: flex;
   background-color: gray;
   height: var(--row-height);
+  white-space: nowrap;
+}
 
-  .date {
-    text-align: left;
-    min-width: var(--edge-width);
-    margin: auto;
-    padding-inline: var(--padding-inline);
-  }
+.date {
+  text-align: left;
+  margin: auto;
+  padding-inline: var(--padding-inline);
+}
 
-  .time {
-    text-align: center;
-    width: inherit;
-    margin: auto;
-    padding-inline: var(--padding-inline);
-  }
+.time {
+  text-align: center;
+  width: inherit;
+  margin: auto;
+  padding-inline: var(--padding-inline);
+}
 
-  .settings {
-    text-align: right;
-    min-width: var(--edge-width);
-    margin: auto;
-    padding-inline: var(--padding-inline);
-  }
+.settings {
+  text-align: right;
+  margin: auto;
+  padding-inline: var(--padding-inline);
 }
 
 ul {
@@ -33,29 +30,29 @@ ul {
   background-color: white;
   margin: 0;
   padding: 0;
-
-  .alt {
-    background-color: silver;
-  }
 }
 
 li {
   height: var(--row-height);
   display: flex;
   padding-inline: var(--padding-inline);
+}
 
-  .name {
-    margin: auto;
-    text-wrap: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 100%;
-  }
+li:nth-child(2n) {
+  background-color: silver;
+}
 
-  .list-icon {
-    margin: auto;
-    width: 32px;
-    height: 32px;
-    padding-inline-end: 16px;
-  }
+.name {
+  margin: auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+.list-icon {
+  margin: auto;
+  width: 32px;
+  height: 32px;
+  padding-inline-end: 16px;
 }
