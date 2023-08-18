@@ -18,6 +18,7 @@ export class AppComponent implements AfterViewInit {
       startWith(0),
       mergeMap(() => this.feedService.getData(feed.endpoint))
     ),
+    icon: feed.icon,
   }));
   date$ = new BehaviorSubject(new Date());
 
