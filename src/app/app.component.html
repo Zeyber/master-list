@@ -13,7 +13,11 @@
   <ng-container *ngFor="let feed of feeds">
     <ng-container *ngIf="feed.res$ | async as res">
       <li *ngFor="let item of res.data; let i = index">
-        <img *ngIf="item.icon" class="list-icon" [src]="item.icon" />
+        <img
+          *ngIf="feed.icon || item.icon"
+          class="list-icon"
+          [src]="feed.icon || item.icon"
+        />
         <div class="name">{{item.message}}</div>
       </li>
     </ng-container>
