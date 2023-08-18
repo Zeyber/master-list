@@ -16,7 +16,7 @@ export class AppComponent implements AfterViewInit {
   feeds = settings.feeds.map((feed) => ({
     res$: interval(ONE_MINUTE).pipe(
       startWith(0),
-      mergeMap(() => this.feedService.getData(feed.endpoint).pipe())
+      mergeMap(() => this.feedService.getData(feed.endpoint))
     ),
     icon: feed.icon,
   }));
