@@ -2,6 +2,8 @@
 
 An organizational list that leverages third-party APIs and displays information in a simple list.
 
+<img width="675" alt="image" src="https://github.com/Zeyber/master-list/assets/11735817/a42fdc00-802a-4113-8d84-09391835c644">
+
 Sometimes managing so many tasks can become overwhelming (eg. emails, agenda, tasks, social media, communications across multiple platforms). It is easy lose track of what needs to be done, when and how much you really need to do.
 
 Master List is an angular-based solution that can be viewed on a browser. It features connecting to APIs or feeds that can be configured to read relevant important information that a user may require.
