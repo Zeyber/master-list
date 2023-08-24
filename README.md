@@ -1,27 +1,55 @@
-# MasterListAngularApp
+# Master List
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+An organizational list that leverages third-party APIs and displays information in a simple list.
 
-## Development server
+Sometimes managing so many tasks can become overwhelming (eg. emails, agenda, tasks, social media, communications across multiple platforms). It is easy lose track of what needs to be done, when and how much you really need to do.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Master List is a node-based solution that runs on any machine within the command line. It features connecting to APIs via “providers” that can be configured to read relevant important information that the client may require.
 
-## Code scaffolding
+## Applications
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Communications: Monitoring incoming messages, emails, chats, etc.
+- Notifications: Monitoring generic notifications from applications.
+- Analytics: Live monitoring analytical applications (eg. Google Analytics, AWS CloudWatch, etc).
+- Agenda: Display relevant Calendar appointments.
+- To Dos and Issue Tracking: Show tasks on To Do lists or assigned Github/Atlassian Issues.
 
-## Build
+### Example: Task list monitoring live data via `Providers`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Using Master List providers for tracking on a Rasberry Pi Zero connected to a monitor.
 
-## Running unit tests
+![2022-04-20 21 05 47](https://user-images.githubusercontent.com/11735817/164304580-009d42ce-aa6a-40be-bf29-d6b7a01cf217.jpg)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+See printer repo: https://github.com/Zeyber/master-list-printer
 
-## Running end-to-end tests
+## Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Clone or download from [Github](https://github.com/Zeyber/master-list).
+- Install packages with `npm install`.
 
-## Further help
+## Setup
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Install provider(s) with `npm install example-provider --save`.
+- Add provider to `setup.ts` by adding `example: new ExampleProvider()` to the `providerConfig` object.
+  - Example setup in [setup.example.ts](https://github.com/Zeyber/master-list/blob/master/setup.example.ts)
+    - Note: See individual provider libraries to learn how to set up each correctly.
+- Run with `npm start`.
+
+## Providers
+
+Providers are third-party wrappers that provide a link between an API or website and a Master List application.
+
+### Creating Custom Providers
+
+Check out the [core repository](https://github.com/Zeyber/master-list-core) to learn how to create custom providers to use with Master List.
+
+### List of Available Providers
+
+A list of providers created by users for use with Master List.
+
+- [AnkiWeb Flashcard Reminder](https://www.npmjs.com/package/@zeyber/master-list-anki-provider) - Informs when and which flashcards are due for revision.
+- [Facebook Messenger Unreads](https://www.npmjs.com/package/@zeyber/master-list-facebook-provider) - See which contacts have unread messages.
+- [Github Issue Tracking](https://www.npmjs.com/package/@zeyber/master-list-github-provider) - See which open issues are currently assigned to you.
+- [Google Gmail/Calendar/Tasks](https://www.npmjs.com/package/@zeyber/master-list-google-provider) - Check unread emails, upcoming events or due tasks.
+- [Instagram Unreads](https://www.npmjs.com/package/@zeyber/master-list-instagram-provider) - See which contacts have unread messages.
+- [System Details](https://www.npmjs.com/package/@zeyber/master-list-system-provider) - Check system details like time, date, CPU and RAM usage.
